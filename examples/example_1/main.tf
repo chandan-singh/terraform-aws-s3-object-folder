@@ -4,8 +4,8 @@ module "test_aws_s3_folder_1" {
   bucket                = "test_bucket"
   base_folder_path      = path.module # Or, something like "~/abc/xyz/build"
   file_glob_pattern     = "**"
+  source_prefix         = "../build/"
   set_auto_content_type = true
-  content_type          = "plain/text"
 
   path_prefix = {
     remove = "folder_a/"

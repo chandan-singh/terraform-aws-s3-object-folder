@@ -71,6 +71,12 @@ variable "path_prefix" {
   # ]
 }
 
+variable "source_prefix" {
+  type        = string
+  default     = ""
+  description = "(Optional) Prefix to add before items found after applying glob pattern on `base_folder_path`. It will help terraform find location of `base_folder_path` for upload."
+}
+
 variable "acl" {
   description = "(Optional) The canned ACL to apply. Defaults to private."
   type        = string
