@@ -94,7 +94,7 @@ Go throuh the `examples` folder and `variable.tf` for more information on the us
 
 ## Examples:
 
-- [Complete](https://github.com/chandan-singh/terraform-aws-s3-object-folder/tree/master/examples/complete) - Complete S3 bucket with most of supported features enabled
+- [Example 1](https://github.com/chandan-singh/terraform-aws-s3-object-folder/tree/master/examples/example_1) - Uploading folder and its contents to a bucket
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 
