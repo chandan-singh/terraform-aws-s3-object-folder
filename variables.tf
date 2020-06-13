@@ -179,4 +179,9 @@ variable "object_lock_retain_until_date" {
   default     = null
 }
 
+variable "module_depends_on" {
+  type    = any
+  default = null
+}
+
 

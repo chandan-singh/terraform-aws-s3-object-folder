@@ -1,3 +1,7 @@
+locals {
+  depends_on = var.module_depends_on
+}
+
 resource "aws_s3_bucket_object" "this" {
   for_each = fileset(var.base_folder_path, var.file_glob_pattern)
 
