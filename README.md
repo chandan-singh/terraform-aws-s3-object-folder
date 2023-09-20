@@ -12,7 +12,7 @@ Supported features:
 
 ## Terraform versions
 
-Only Terraform 0.12 is supported.
+Terraform >=0.12 is supported (tested with Terraform v1.5)
 
 ## Usage
 
@@ -102,14 +102,14 @@ Go throuh the `examples` folder and `variable.tf` for more information on the us
 
 | Name      | Version    |
 | --------- | ---------- |
-| terraform | ~> 0.12.26 |
-| aws       | ~> 2.35    |
+| terraform | ~> 0.12    |
+| aws       | ~> 4.9     |
 
 ## Providers
 
 | Name | Version |
 | ---- | ------- |
-| aws  | ~> 2.35 |
+| aws  | ~> 4.95 |
 
 ## Inputs
 
