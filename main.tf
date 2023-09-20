@@ -2,7 +2,7 @@ locals {
   depends_on = var.module_depends_on
 }
 
-resource "aws_s3_bucket_object" "this" {
+resource "aws_s3_object" "this" {
   for_each = fileset(var.base_folder_path, var.file_glob_pattern)
 
 
@@ -25,8 +25,8 @@ resource "aws_s3_bucket_object" "this" {
 
   # The following attribute info depends on file to be uploaded
   key          = "${var.path_prefix.add}${trimprefix(each.value, var.path_prefix.remove)}"
-  source       = "${var.source_prefix}/${each.value}"
-  etag         = var.kms_key_id != "" && var.server_side_encryption != "" ? filemd5("${var.base_folder_path}/${each.value}") : null
+  source       = join("/", compact([var.base_folder_path, var.source_prefix, each.value]))
+  source_hash  = filemd5("${var.base_folder_path}/${each.value}")
   content_type = var.set_auto_content_type ? length(regexall("^.*\\.(.*)", each.value)) > 0 ? lookup(local.extension_to_mime, element(regex("^.*\\.(.*)", each.value), 0), null) : null : var.content_type
   depends_on   = [var.module_depends_on]
 }
